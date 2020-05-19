@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>RealCharts prototype</title>
+</head>
+
+<body>
+
+    <h1>RealCharts protytype</h1>
+    <p>Chart library based on PIXI.js</p>
+    <div id="chart" style="width: 1400px; height: 500px;"></div>
+
+    <script src="../dist/realcharts.js"></script>
+    <script>
+        var data = JSON.parse(localStorage.getItem('data'));
+        let x = data.tagData.map(x => [Date.parse(x.siteTime), x.value]);
+        console.log(x);
+
+        var mySerie = {
+            name: 'MyFirstSerie',
+            data: x,
+            color: 0x00FF00
+        };
+     
+        var myChart = new libtest.RealCharts({
+            container: 'chart',
+            backgroundColor: 0xFFFFFF,
+            series: [mySerie]
+        });
+
+        // setInterval(() => {
+        //     mySecond.data = x.map(entry => [entry[0], Math.random() * 5 / 100 * entry[1] + entry[1]])
+        // }, 1000);
+
+        let xIndex = 0;
+
+    </script>
+</body>
+
+</html>
